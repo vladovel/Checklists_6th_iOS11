@@ -7,17 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F06E750200E2FF200335166 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06E74F200E2FF200335166 /* ChecklistItem.swift */; };
+		3F06E752200F960600335166 /* AddItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06E751200F960600335166 /* AddItemTableViewController.swift */; };
 		3F7BBE23200CD3A900E4C07B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7BBE22200CD3A900E4C07B /* AppDelegate.swift */; };
-		3F7BBE25200CD3A900E4C07B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7BBE24200CD3A900E4C07B /* ViewController.swift */; };
+		3F7BBE25200CD3A900E4C07B /* ChecklistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7BBE24200CD3A900E4C07B /* ChecklistsViewController.swift */; };
 		3F7BBE28200CD3A900E4C07B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7BBE26200CD3A900E4C07B /* Main.storyboard */; };
 		3F7BBE2A200CD3A900E4C07B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F7BBE29200CD3A900E4C07B /* Assets.xcassets */; };
 		3F7BBE2D200CD3A900E4C07B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7BBE2B200CD3A900E4C07B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F06E74F200E2FF200335166 /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
+		3F06E751200F960600335166 /* AddItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemTableViewController.swift; sourceTree = "<group>"; };
 		3F7BBE1F200CD3A900E4C07B /* Checklists_6th_iOS11.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklists_6th_iOS11.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7BBE22200CD3A900E4C07B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3F7BBE24200CD3A900E4C07B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F7BBE24200CD3A900E4C07B /* ChecklistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistsViewController.swift; sourceTree = "<group>"; };
 		3F7BBE27200CD3A900E4C07B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F7BBE29200CD3A900E4C07B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F7BBE2C200CD3A900E4C07B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				3F7BBE22200CD3A900E4C07B /* AppDelegate.swift */,
-				3F7BBE24200CD3A900E4C07B /* ViewController.swift */,
+				3F06E74F200E2FF200335166 /* ChecklistItem.swift */,
+				3F7BBE24200CD3A900E4C07B /* ChecklistsViewController.swift */,
+				3F06E751200F960600335166 /* AddItemTableViewController.swift */,
 				3F7BBE26200CD3A900E4C07B /* Main.storyboard */,
 				3F7BBE29200CD3A900E4C07B /* Assets.xcassets */,
 				3F7BBE2B200CD3A900E4C07B /* LaunchScreen.storyboard */,
@@ -136,7 +142,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F7BBE25200CD3A900E4C07B /* ViewController.swift in Sources */,
+				3F06E752200F960600335166 /* AddItemTableViewController.swift in Sources */,
+				3F7BBE25200CD3A900E4C07B /* ChecklistsViewController.swift in Sources */,
+				3F06E750200E2FF200335166 /* ChecklistItem.swift in Sources */,
 				3F7BBE23200CD3A900E4C07B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
