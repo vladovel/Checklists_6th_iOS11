@@ -44,7 +44,7 @@
                     <navigationItem key="navigationItem" title="Checklists" id="ytO-ID-Je0">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bYx-VV-PCH">
                             <connections>
-                                <segue destination="dxt-Yh-hBN" kind="show" id="y01-5e-Lam"/>
+                                <segue destination="dxt-Yh-hBN" kind="show" identifier="AddItem" id="Ulo-Go-Ln6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -76,7 +76,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="done" destination="dxt-Yh-hBN" eventType="editingDidEndOnExit" id="S6m-HT-z7w"/>
                                                         <outlet property="delegate" destination="dxt-Yh-hBN" id="do3-L0-NuS"/>

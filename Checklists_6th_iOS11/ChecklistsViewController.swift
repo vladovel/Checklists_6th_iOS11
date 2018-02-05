@@ -8,7 +8,8 @@
 
 import UIKit
 
-class CheckListViewController: UITableViewController {
+class CheckListViewController: UITableViewController, AddItemViewControllerDelegate {
+    
     
     var items: [ChecklistItem]
     
@@ -55,6 +56,8 @@ class CheckListViewController: UITableViewController {
         
         super.init(coder: aDecoder)
     }
+    
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
@@ -110,19 +113,27 @@ class CheckListViewController: UITableViewController {
         }
     }
     
+    func addItemViewControllerDidCancel(_ controller: AddItemTableViewController) {
+        navigationController?.popViewController(animated: true)
+    }
     
-    @IBAction func addItem() {
+    func addItemViewController(_ controller: AddItemTableViewController, didFinishAdding item: ChecklistItem) {
         
         let newRowIndex = items.count
-        
-        let item = ChecklistItem()
-        item.text = "I am a new row"
-        item.checked = false
         items.append(item)
         
         let indexPath = IndexPath(row: newRowIndex, section: 0)
         let indexPaths = [indexPath]
         tableView.insertRows(at: indexPaths, with: .automatic)
+        
+        navigationController?.popViewController(animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddItem" {
+            let controller = segue.destination as! AddItemTableViewController
+            controller.delegate = self
+        }
     }
     
 }
