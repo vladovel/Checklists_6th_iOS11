@@ -13,12 +13,15 @@ class CheckListViewController: UITableViewController, ItemDetailViewControllerDe
     
     var items = [ChecklistItem]()
     
+    var checklist: Checklist!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .never
         loadChecklistItems()
+        title = checklist.name
     }
     
     override func didReceiveMemoryWarning() {
