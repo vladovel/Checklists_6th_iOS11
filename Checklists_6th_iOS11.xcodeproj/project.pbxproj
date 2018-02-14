@@ -47,6 +47,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F2FF4B32034716300BC4A5A /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				3FDC26FC203198DD00B6B82F /* Checklist.swift */,
+				3F06E74F200E2FF200335166 /* ChecklistItem.swift */,
+				3F2FF4B12034416D00BC4A5A /* DataModel.swift */,
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
+		3F2FF4B42034718F00BC4A5A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3FDC26FA20318A6A00B6B82F /* AllListsViewController.swift */,
+				3F7BBE24200CD3A900E4C07B /* ChecklistsViewController.swift */,
+				3F06E751200F960600335166 /* ItemDetailViewController.swift */,
+				3FDC26FE20319C7400B6B82F /* ListDetailViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		3F2FF4B5203471B500BC4A5A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3F7BBE29200CD3A900E4C07B /* Assets.xcassets */,
+				3F7BBE2B200CD3A900E4C07B /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		3F7BBE16200CD3A900E4C07B = {
 			isa = PBXGroup;
 			children = (
@@ -66,18 +96,12 @@
 		3F7BBE21200CD3A900E4C07B /* Checklists_6th_iOS11 */ = {
 			isa = PBXGroup;
 			children = (
+				3F2FF4B32034716300BC4A5A /* Data Models */,
+				3F2FF4B42034718F00BC4A5A /* View Controllers */,
+				3F2FF4B5203471B500BC4A5A /* Resources */,
 				3F7BBE22200CD3A900E4C07B /* AppDelegate.swift */,
-				3F2FF4B12034416D00BC4A5A /* DataModel.swift */,
-				3F06E74F200E2FF200335166 /* ChecklistItem.swift */,
-				3FDC26FA20318A6A00B6B82F /* AllListsViewController.swift */,
-				3F7BBE24200CD3A900E4C07B /* ChecklistsViewController.swift */,
-				3F06E751200F960600335166 /* ItemDetailViewController.swift */,
-				3F7BBE26200CD3A900E4C07B /* Main.storyboard */,
-				3FDC26FE20319C7400B6B82F /* ListDetailViewController.swift */,
-				3FDC26FC203198DD00B6B82F /* Checklist.swift */,
-				3F7BBE29200CD3A900E4C07B /* Assets.xcassets */,
-				3F7BBE2B200CD3A900E4C07B /* LaunchScreen.storyboard */,
 				3F7BBE2E200CD3A900E4C07B /* Info.plist */,
+				3F7BBE26200CD3A900E4C07B /* Main.storyboard */,
 			);
 			path = Checklists_6th_iOS11;
 			sourceTree = "<group>";

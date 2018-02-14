@@ -8,30 +8,30 @@
 
 import UIKit
 
-class AllListsViewController: UITableViewController, ListDetailViewControllerDelegate {
+class AllListsViewController: UITableViewController, ListDetailViewControllerDelegate, UINavigationControllerDelegate {
     
     var dataModel: DataModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        var list = Checklist(name: "Birthdays")
-//        lists.append(list)
-//
-//        list = Checklist(name: "Groceries")
-//        lists.append(list)
-//
-//        list = Checklist(name: "Cool Apps")
-//        lists.append(list)
-//
-//        list = Checklist(name: "To Do")
-//        lists.append(list)
-//        
-//        for list in lists {
-//            let item = ChecklistItem()
-//            item.text = "Item for \(list.name)"
-//            list.items.append(item)
-//        }
+        //        var list = Checklist(name: "Birthdays")
+        //        lists.append(list)
+        //
+        //        list = Checklist(name: "Groceries")
+        //        lists.append(list)
+        //
+        //        list = Checklist(name: "Cool Apps")
+        //        lists.append(list)
+        //
+        //        list = Checklist(name: "To Do")
+        //        lists.append(list)
+        //        
+        //        for list in lists {
+        //            let item = ChecklistItem()
+        //            item.text = "Item for \(list.name)"
+        //            list.items.append(item)
+        //        }
         
         navigationController?.navigationBar.prefersLargeTitles = true
         
@@ -41,7 +41,21 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        navigationController?.delegate = self
+        
+        let index = dataModel.indexOfSelectedChecklist
+        
+        if index >= 0 && index < dataModel.lists.count {
+            let checklist = dataModel.lists[index]
+            performSegue(withIdentifier: "ShowChecklist", sender: checklist)
+        }
+        
+    }
+    
     
     // MARK: - Table view data source
     
@@ -49,6 +63,14 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return dataModel.lists.count
+        
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        
+        if viewController === self {
+            dataModel.indexOfSelectedChecklist = -1
+        }
         
     }
     
@@ -87,6 +109,9 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        dataModel.indexOfSelectedChecklist = indexPath.row
+        
         let checklist = dataModel.lists[indexPath.row]
         performSegue(withIdentifier: "ShowChecklist", sender: checklist)
     }
