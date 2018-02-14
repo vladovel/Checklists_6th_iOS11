@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F06E750200E2FF200335166 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06E74F200E2FF200335166 /* ChecklistItem.swift */; };
 		3F06E752200F960600335166 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06E751200F960600335166 /* ItemDetailViewController.swift */; };
+		3F2FF4B22034416D00BC4A5A /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2FF4B12034416D00BC4A5A /* DataModel.swift */; };
 		3F7BBE23200CD3A900E4C07B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7BBE22200CD3A900E4C07B /* AppDelegate.swift */; };
 		3F7BBE25200CD3A900E4C07B /* ChecklistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7BBE24200CD3A900E4C07B /* ChecklistsViewController.swift */; };
 		3F7BBE28200CD3A900E4C07B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7BBE26200CD3A900E4C07B /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		3F06E74F200E2FF200335166 /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 		3F06E751200F960600335166 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		3F2FF4B12034416D00BC4A5A /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		3F7BBE1F200CD3A900E4C07B /* Checklists_6th_iOS11.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklists_6th_iOS11.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7BBE22200CD3A900E4C07B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F7BBE24200CD3A900E4C07B /* ChecklistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistsViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				3F7BBE22200CD3A900E4C07B /* AppDelegate.swift */,
+				3F2FF4B12034416D00BC4A5A /* DataModel.swift */,
 				3F06E74F200E2FF200335166 /* ChecklistItem.swift */,
 				3FDC26FA20318A6A00B6B82F /* AllListsViewController.swift */,
 				3F7BBE24200CD3A900E4C07B /* ChecklistsViewController.swift */,
@@ -156,6 +159,7 @@
 				3F7BBE25200CD3A900E4C07B /* ChecklistsViewController.swift in Sources */,
 				3FDC26FD203198DD00B6B82F /* Checklist.swift in Sources */,
 				3F06E750200E2FF200335166 /* ChecklistItem.swift in Sources */,
+				3F2FF4B22034416D00BC4A5A /* DataModel.swift in Sources */,
 				3FDC26FB20318A6A00B6B82F /* AllListsViewController.swift in Sources */,
 				3F7BBE23200CD3A900E4C07B /* AppDelegate.swift in Sources */,
 			);
