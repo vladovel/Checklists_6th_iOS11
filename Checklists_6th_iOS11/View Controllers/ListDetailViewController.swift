@@ -14,14 +14,17 @@ protocol ListDetailViewControllerDelegate: class {
     func listDetailViewController(_ controller: ListDetailViewController, didFinishEditing checklist: Checklist)
 }
 
-class ListDetailViewController: UITableViewController, UITextFieldDelegate {
-
+class ListDetailViewController: UITableViewController, UITextFieldDelegate, IconPickerViewControllerDelegate {
+    
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
+    @IBOutlet weak var iconImageView: UIImageView!
     
     weak var delegate: ListDetailViewControllerDelegate?
     
     var checklistToEdit: Checklist?
+    
+    var iconName = "Folder"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,20 +35,28 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate {
             title = "Edit Checklist"
             textField.text = checklist.name
             doneBarButton.isEnabled = true
+            iconName = checklist.iconName
         }
-
+        iconImageView.image = UIImage(named: iconName)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         textField.becomeFirstResponder()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Actions
+    
+    func iconPicker(_ picker: IconPickerViewController, didPick iconName: String) {
+        self.iconName = iconName
+        iconImageView.image = UIImage(named: iconName)
+        navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func cancel() {
         delegate?.listDetailViewControlleridCancel(self)
@@ -54,20 +65,21 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate {
     @IBAction func done() {
         if let checklist = checklistToEdit  {
             checklist.name = textField.text!
+            checklist.iconName = iconName
             delegate?.listDetailViewController(self, didFinishEditing: checklist)
         } else {
-            let checklist = Checklist(name: textField.text!)
+            let checklist = Checklist(name: textField.text!, iconName: iconName)
             delegate?.listDetailViewController(self, didFinishAdding: checklist)
         }
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 1
@@ -76,7 +88,11 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - TableView Delegate
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        return nil
+        if indexPath.section == 1 {
+            return indexPath
+        } else {
+            return nil
+        }
     }
     
     // MARK: - UITextField Delegate
@@ -90,7 +106,7 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate {
         
         return true
     }
-
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -100,6 +116,13 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PickIcon" {
+            let controller = segue.destination as! IconPickerViewController
+            controller.delegate = self
+        }
+    }
+    
+    
 }
